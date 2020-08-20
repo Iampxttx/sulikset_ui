@@ -1,31 +1,24 @@
 import React, { useState } from 'react';
 import './App.css';
 import Header from './Components/Layout/Header';
+import Search from './Components/Layout/Search';
 
 function App() {
 
-  const initJobs = [
-    {
-      "id": 1,
-      "tyotehtava": "Lastenhoitaja"
-    },
-    {
-      "id": 2,
-      "tyotehtava": "Lakaisukoneen kuljettaja"
-    },
-    {
-      "id": 3,
-      "tyotehtava": "Siwan myyjä"
-    }
-  ]
+  const initJobs = []
   const [jobs, setJobs] = useState(initJobs);
   
+  fetch('http://gis.vantaa.fi/rest/tyopaikat/v1/kaikki')
+  .then(response => response.json())
+  .then(json=>setJobs([...json]));
+  
   const rows = () => jobs.map(job => {
-    return <p>{job.tyotehtava}</p>
+    return <p><input type="checkbox"></input>{job.tyotehtava}, {job.osoite} <a href={job.linkki}>Lisätietoja</a></p>
   })
   return (
     <div className="App">
       <Header />
+      <Search />
       {rows()}
     </div>
   );
