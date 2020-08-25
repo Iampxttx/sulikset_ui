@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Header from './Components/Layout/Header';
 import Search from './Components/Layout/Search';
+import Jobs from './Components/Jobs';
 
 function App() {
 
@@ -19,7 +20,9 @@ function App() {
     <div className="App">
       <Header />
       <Search />
+      <jobs />
       {rows()}
+    
     </div>
   );
 }
