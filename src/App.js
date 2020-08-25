@@ -21,6 +21,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+        <Switch>
         <Route path="/weather">
           <Weather />
         </Route>
@@ -28,6 +29,7 @@ function App() {
           <Search />
           <Jobs jobs={jobs} />
         </Route>
+        </Switch>
       </div>
     </Router>
   );
