@@ -14,26 +14,28 @@ function App() {
   const[filterText, setFilterText] = useState('');
   const[showAll, setShowAll] = useState(true)
 
-  const handFilter = (filterText) => {
-    setFilterText(filteringText)
+  const handleFilter = (filteringText) => {
+    setFilterText(filteringText);
     if(filteringText === ''){
+      console.log('true')
     }
     else{
       setShowAll(false);
+      console.log('tuli app.js' + filteringText)
     }
-}
-const handleComplete = (job) =>{
-  jobs.map((checkJob) => {
-    if (checkJob === job.id){
-      checkJob.completed = !checkJob.completed
-    }
-    console.log(checkJob.id + " - " + job.id)
+  }
+  const handleComplete = (job) =>{
+    jobs.map((checkJob) => {
+      if (checkJob === job.id){
+        checkJob.completed = !checkJob.completed
+      }
+      console.log(checkJob.id + " - " + job.id)
   });
-setJobs([...jobs]);
+  setJobs([...jobs]);
 }
 const jobToShow = showAll
   ? jobs
-  : jobs.filter(job => job.tyotehtava.toUpperCase().includes(filterText.toUpperCase()))
+  : jobs.filterText(job => job.tyotehtava.toUpperCase().includes(filterText.toUpperCase()))
 
 useEffect(() => {
     fetch('http://gis.vantaa.fi/rest/tyopaikat/v1/kaikki')
@@ -50,7 +52,7 @@ useEffect(() => {
           <Weather />
         </Route>
         <Route path="/">
-          <Search onFilter={handFilter}/>
+          <Search onFilter={handleFilter}/>
           <Jobs onCompleted={handleComplete} jobs={jobsToShow} />
         </Route>
         </Switch>
