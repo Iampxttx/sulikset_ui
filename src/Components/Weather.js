@@ -1,5 +1,5 @@
 import React from 'react'
-import {VictoryChart} from 'victory'
+import {VictoryChart, VictoryLine} from 'victory'
 
 function Weather() {
 
@@ -9,7 +9,7 @@ function Weather() {
             domainPadding={{ x: 30, y: 10 }}
             width={1000}
             height={250}>
-                <VictoryLine>
+                <VictoryLine
                 data={[
                     { experiment: "1.1.", actual: -10 },
                     { experiment: "2.1.", actual: 15 },
@@ -23,8 +23,7 @@ function Weather() {
                         { stroke: "green", strokeWidth: 1 }
                 }}
                 x="expreriment"
-                y="actual"
-                </VictoryLine>
+                y="actual" />
         </VictoryChart>
         </div>
     )
