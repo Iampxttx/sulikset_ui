@@ -7,6 +7,7 @@ function Job({ job, onCompleted }) {
     }
 
     const getStyle = (complete) => ({
+        background: '#f4f4f4' ,
         textDecoration: complete ? 'line-through' : 'none'
     })
 
