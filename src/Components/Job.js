@@ -4,7 +4,7 @@ function Job({ job, onCompleted }) {
 
     const [checked] = useState(false);
 
-    const handleCompleted = () => {
+    const handleCompleted =() => {
         onCompleted(job);
     }
 
@@ -13,11 +13,11 @@ function Job({ job, onCompleted }) {
     })
 
     return (
-        <table> key={job.id} style={getStyle(job.completed)}>
+        <table key={job.id} style={getStyle(job.completed)}>
             <tbody>
                 <tr>
                     <td width="1%">
-                        <input type="checkbox" defaultChecked={checked} onChange={handleCompleted}></input>
+                        <input type="checkbox" defaultChecked={job.completed} onChange={handleCompleted}></input>
                     </td>
                     <td width="59%">
                         {job.tyotehtava}

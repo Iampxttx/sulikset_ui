@@ -26,16 +26,16 @@ function App() {
   }
   const handleComplete = (job) =>{
     jobs.map((checkJob) => {
-      if (checkJob === job.id){
+      if (checkJob.id === job.id){
         checkJob.completed = !checkJob.completed
       }
       console.log(checkJob.id + " - " + job.id)
   });
   setJobs([...jobs]);
 }
-const jobToShow = showAll
+const jobsToShow = showAll
   ? jobs
-  : jobs.filterText(job => job.tyotehtava.toUpperCase().includes(filterText.toUpperCase()))
+  : jobs.filter(job => job.tyotehtava.toUpperCase().includes(filterText.toUpperCase()))
 
 useEffect(() => {
     fetch('http://gis.vantaa.fi/rest/tyopaikat/v1/kaikki')

@@ -4,17 +4,15 @@ import Job from './Job';
 
 function Jobs({ jobs, onCompleted }) {
 
-    const handleCompleted = (job) ==> {
+    const handleCompleted = (job) => {
         onCompleted(job);
     }
 
-
     const rows = () => jobs.map(job => {
-        return <Job job={job}  key={job.id}/>
+        return <Job onCompleted={handleCompleted} job={job}  key={job.id}/>
     })
    
     return (
-
         <div>
             {rows()}
         </div>
