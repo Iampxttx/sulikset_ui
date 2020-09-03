@@ -2,8 +2,6 @@ import React, {useState} from 'react'
 
 function Job({ job, onCompleted }) {
 
-    const [checked] = useState(false);
-
     const handleCompleted =() => {
         onCompleted(job);
     }
