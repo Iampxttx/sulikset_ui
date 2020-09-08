@@ -12,10 +12,10 @@ function Weather() {
     ]
 
     const humidityData = [
-        { Päivämäärä: "1.1.", Ilmankosteus: 8000 },
-        { Päivämäärä: "2.1.", Ilmankosteus: 13000 },
-        { Päivämäärä: "3.1", Ilmankosteus: 17900 },
-        { Päivämäärä: "4.1.", Ilmankosteus: 23000 },
+        { Päivämäärä: "1.1.", Ilmankosteus: 61 },
+        { Päivämäärä: "2.1.", Ilmankosteus: 64 },
+        { Päivämäärä: "3.1", Ilmankosteus: 67 },
+        { Päivämäärä: "4.1.", Ilmankosteus: 70 },
     ]
     return (
         <div>
