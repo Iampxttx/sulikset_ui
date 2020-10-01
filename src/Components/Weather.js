@@ -21,7 +21,7 @@ function Weather() {
         const measurementTime = temphum.PublishedAt.split('T')[1].split(':')[0] + ':' + temphum.PublishedAt.split('T')[1].split(':')[1];
         charttemp.push({ x: String(measurementTime), y: parseInt(temphum.Temp) });
         charthum.push({ Päivämäärä: String(measurementTime), Ilmankosteus: parseInt(temphum.Hum), label: String(temphum.Hum.split('.')[0]) + "%" });
-        return <div key={humptemkey++}><b>Pvm: </b>{measurementDate}, <b>klo:</b> {measurementTime} <b>Ilmankosteus:</b> {temphum.Hum.split('.')[0]}% <b>Lämpötila:</b> {temphum.Temp}.split('.')[0]}°C</div>
+        return <div key={humptemkey++}><b>Pvm:</b>{measurementDate}<b>klo:</b> {measurementTime}<b>Ilmankosteus:</b>{temphum.Hum.split('.')[0]}% <b>Lämpötila:</b> {temphum.Temp}.split('.')[0]}°C</div>
     })
 
     const temperatureData = charttemp;
